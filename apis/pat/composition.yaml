@@ -36,6 +36,12 @@ spec:
               - type: FromCompositeFieldPath
                 fromFieldPath: spec.parameters.networkSelector
                 toFieldPath: spec.compositionSelector.matchLabels[type]
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.parameters.subnets
+                toFieldPath: spec.parameters.subnets
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.parameters.vpcCidrBlock
+                toFieldPath: spec.parameters.vpcCidrBlock
               - type: ToCompositeFieldPath
                 fromFieldPath: status.subnetIds
                 policy:
