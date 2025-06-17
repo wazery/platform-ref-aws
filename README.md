@@ -86,7 +86,7 @@ create a new [kind](https://kind.sigs.k8s.io) cluster:
 kind create cluster
 ```
 
-Finally install UXP into the `upbound-system` namespace:
+Finally install UXP into the `crossplane-system` namespace:
 
 ```console
 up uxp install --set='args[0]=--enable-usages'
@@ -98,7 +98,7 @@ for the correct deployment and eventual de-provisioning of this reference platfo
 You can validate the install by inspecting all installed components:
 
 ```console
-kubectl get all -n upbound-system
+kubectl get all -n crossplane-system
 ```
 
 ### Install the AWS Reference Platform
@@ -138,7 +138,7 @@ credentials:
 AWS_PROFILE=default && echo -e "[default]\naws_access_key_id = $(aws configure get aws_access_key_id --profile $AWS_PROFILE)\naws_secret_access_key = $(aws configure get aws_secret_access_key --profile $AWS_PROFILE)" > creds.conf
 
 # Create a K8s secret with the AWS creds:
-kubectl create secret generic aws-creds -n upbound-system --from-file=credentials=./creds.conf
+kubectl create secret generic aws-creds -n crossplane-system --from-file=credentials=./creds.conf
 
 # Configure the AWS Provider to use the secret:
 kubectl apply -f https://raw.githubusercontent.com/upbound/platform-ref-aws/main/examples/aws-default-provider.yaml

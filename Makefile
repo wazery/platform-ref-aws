@@ -127,7 +127,7 @@ UPTEST_VERSION = v1.2.0
 # ------------------
 CROSSPLANE_CHART_REPO = https://charts.upbound.io/stable
 CROSSPLANE_CHART_NAME = universal-crossplane
-CROSSPLANE_NAMESPACE = upbound-system
+CROSSPLANE_NAMESPACE = crossplane-system
 CROSSPLANE_ARGS = "--enable-usages"
 KIND_CLUSTER_NAME ?= uptest-$(PROJECT_NAME)
 
